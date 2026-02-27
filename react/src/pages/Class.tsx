@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 // Define the Week data type
-interface WeekData {
-  week: number;
+interface organizations {
+  Company: number;
   title: string;
   desc: string;
   project: string | null;
@@ -11,27 +11,27 @@ interface WeekData {
   internalLink?: string | null;
 }
 
-const weeksData: WeekData[] = [
-  { week: 1, title: 'Week 1: 1/17', desc: 'Intro to HTML, CSS, JS', project: null, recording: null, internalLink: '/syllabus' },
-  { week: 2, title: 'Week 2: 1/24', desc: 'Text Editors, File Paths, and Replit', project: null, recording: null },
-  { week: 3, title: 'Week 3: 2/7', desc: 'CSS Basics and Flexbox', project: null, recording: null },
-  { week: 4, title: 'Week 4: 2/14', desc: 'Javascript Variables, Data Types, Operators, and If statements', project: null, recording: null },
-  { week: 5, title: 'Week 5: 2/21', desc: 'Functions', project: null, recording: null },
-  { week: 6, title: 'Week 6: 2/28', desc: 'Data Structure: Arrays and Objects', project: null, recording: null },
-  { week: 7, title: 'Week 7: 3/7', desc: 'Document Object Model I', project: null, recording: null },
-  { week: 8, title: 'Week 8: 3/14', desc: 'Optional SWITCH x ICSpark Hackathon (Tentative)', project: null, recording: null },
-  { week: 9, title: 'Week 9: 3/21', desc: 'SPRING BREAK No Class', project: null, recording: null },
-  { week: 10, title: 'Week 10: 3/28', desc: 'Document Object Model II', project: null, recording: null },
-  { week: 11, title: 'Week 11: 4/4', desc: 'CSS Pseudo-classes and Animations and Web Design', project: null, recording: null },
-  { week: 12, title: 'Week 12: 4/11', desc: 'Final Review and Final Project I', project: null, recording: null, internalLink: '/showcase' },
-  { week: 13, title: 'Week 13: 4/18', desc: 'Final Project II', project: null, recording: null, internalLink: '/showcase' },
-  { week: 14, title: 'Week 14: 4/25', desc: 'Final Showcase', project: '', recording: null, internalLink: '/showcase' }
+const weeksData: organizations[] = [
+  { Company: 1, title: 'Week 1: 1/17', desc: 'Intro to HTML, CSS, JS', project: null, recording: null, internalLink: '/syllabus' },
+  { Company: 2, title: 'Week 2: 1/24', desc: 'Text Editors, File Paths, and Replit', project: null, recording: null },
+  { Company: 3, title: 'Week 3: 2/7', desc: 'CSS Basics and Flexbox', project: null, recording: null },
+  { Company: 4, title: 'Week 4: 2/14', desc: 'Javascript Variables, Data Types, Operators, and If statements', project: null, recording: null },
+  { Company: 5, title: 'Week 5: 2/21', desc: 'Functions', project: null, recording: null },
+  { Company: 6, title: 'Week 6: 2/28', desc: 'Data Structure: Arrays and Objects', project: null, recording: null },
+  { Company: 7, title: 'Week 7: 3/7', desc: 'Document Object Model I', project: null, recording: null },
+  { Company: 8, title: 'Week 8: 3/14', desc: 'Optional SWITCH x ICSpark Hackathon (Tentative)', project: null, recording: null },
+  { Company: 9, title: 'Week 9: 3/21', desc: 'SPRING BREAK No Class', project: null, recording: null },
+  { Company: 10, title: 'Week 10: 3/28', desc: 'Document Object Model II', project: null, recording: null },
+  { Company: 11, title: 'Week 11: 4/4', desc: 'CSS Pseudo-classes and Animations and Web Design', project: null, recording: null },
+  { Company: 12, title: 'Week 12: 4/11', desc: 'Final Review and Final Project I', project: null, recording: null, internalLink: '/showcase' },
+  { Company: 13, title: 'Week 13: 4/18', desc: 'Final Project II', project: null, recording: null, internalLink: '/showcase' },
+  { Company: 14, title: 'Week 14: 4/25', desc: 'Final Showcase', project: '', recording: null, internalLink: '/showcase' }
 ];
 
 function Class() {
-  const [selectedWeek, setSelectedWeek] = useState<WeekData | null>(null);
+  const [selectedWeek, setSelectedWeek] = useState<organizations | null>(null);
 
-  const openModal = (week: WeekData): void => {
+  const openModal = (week:organizations): void => {
     setSelectedWeek(week);
   };
 
